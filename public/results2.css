@@ -1,0 +1,127 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+/* Header Styling */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px 20px;
+}
+
+header .logo img {
+  max-height: 40px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+nav ul li a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Main Content Styling */
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+main h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+main #result {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+main button {
+  background-color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+main button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Similar Tests Section Styling */
+section {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+#similar-tests {
+  margin-top: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+#similar-tests h2 {
+  margin-bottom: 20px;
+}
+
+.similar-tests {
+  background-color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+}
+
+.similar-tests a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+div .similar-tests img {
+  width: 200px;
+  height: auto;
+  border: 1px solid #cccccc;
+  background-color: #f9f9f9;
+  object-fit: cover;
+}
+
+div .similar-tests p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333333;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer .social-media a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+}

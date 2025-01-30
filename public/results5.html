@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Results</title>
+    <link rel="stylesheet" href="results5.css" />
+    <script defer src="results5.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          src="https://cdn.glitch.global/b8d90080-2a2e-46ba-adea-351aa5fe7100/Screenshot%202024-12-21%20at%205.22.28%20PM.png?v=1734772968982"
+          alt="Website Logo"
+        />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="account.html">Account</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Which Disney Princess Are You?</h1>
+      <p id="result">Result:</p>
+      <p id="description">Description:</p>
+
+      <button onclick="retakeQuiz()">Retake Quiz</button>
+      <button onclick="shareResults()">Share Results</button>
+    </main>
+    <hr />
+    <section>
+      <h2>Explore Similar Tests</h2>
+      <div id="similar-tests">
+        <div class="similar-tests">
+          <a href="quiz1.html">
+            <img src="https://cdn.glitch.global/b8d90080-2a2e-46ba-adea-351aa5fe7100/%5BALPHA%5D%20Animal.jpg?v=1734771443215" alt="Quiz 1 Thumbnail"/>
+            <p>What Animal Are You?</p>
+          </a>
+        </div>
+        <div class="similar-tests">
+          <a href="quiz2.html">
+            <img src="https://cdn.glitch.global/b8d90080-2a2e-46ba-adea-351aa5fe7100/%5BALPHA%5D%20Aura.jpg?v=1734771445540" alt="Quiz 2 Thumbnail"/>
+            <p>What's Your Aura Color?</p>
+          </a>
+        </div>
+        <div class="similar-tests">
+          <a href="quiz3.html">
+            <img src="https://cdn.glitch.global/b8d90080-2a2e-46ba-adea-351aa5fe7100/%5BALPHA%5D%20Death.jpg?v=1734771449967" alt="Quiz 3 Thumbnail"/>
+            <p>How Did You Die in Your Past Life?</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <p><strong>InnerSelf Explorer</strong><br />The ultimate hub for fun and insightful personality tests.</p>
+        <p>Copyright &copy; Aguilar, Pascual. All rights reserved.</p>
+        <div class="social-media">
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div class="citations">
+        <h3>Citations</h3>
+        <ul>
+          <li>
+            Alpha Tests. (2016a, September 3).
+            <i>How did you DIE in a past life?</i> [Video]. YouTube.
+            <a
+              href="https://www.youtube.com/watch?v=YxBAcx_raDM"
+              target="_blank"
+              >https://www.youtube.com/watch?v=YxBAcx_raDM</a
+            >
+          </li>
+          <li>
+            Alpha Tests. (2016, December 19).
+            <i>What ANIMAL are you? (Personality test with animals)</i> [Video].
+            YouTube.
+            <a
+              href="https://www.youtube.com/watch?v=EzXKa1xMVss"
+              target="_blank"
+              >https://www.youtube.com/watch?v=EzXKa1xMVss</a
+            >
+          </li>
+          <li>
+            Alpha Tests. (2017a, March 11).
+            <i>What is The Best WEAPON For You?</i> [Video]. YouTube.
+            <a
+              href="https://www.youtube.com/watch?v=aaLsMUdh1U4"
+              target="_blank"
+              >https://www.youtube.com/watch?v=aaLsMUdh1U4</a
+            >
+          </li>
+          <li>
+            Alpha Tests. (2017b, March 27).
+            <i>Which DISNEY PRINCESS are you?</i> [Video]. YouTube.
+            <a
+              href="https://www.youtube.com/watch?v=ylXS7QH40SA"
+              target="_blank"
+              >https://www.youtube.com/watch?v=ylXS7QH40SA</a
+            >
+          </li>
+          <li>
+            Alpha Tests. (2017b, May 27).
+            <i>Which FOOTBALL player are you?</i> [Video]. YouTube.
+            <a
+              href="https://www.youtube.com/watch?v=JvjiwOFD5CM"
+              target="_blank"
+              >https://www.youtube.com/watch?v=JvjiwOFD5CM</a
+            >
+          </li>
+          <li>
+            Alpha Tests. (2017b, November 15).
+            <i>What color is your aura?</i> [Video]. YouTube.
+            <a
+              href="https://www.youtube.com/watch?v=zRT0JbcoqPs"
+              target="_blank"
+              >https://www.youtube.com/watch?v=zRT0JbcoqPs</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      // Retrieve the score from the query parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const score = parseInt(urlParams.get("score"), 10); // Convert to an integer
+
+      // Display the score and result
+      const result = document.getElementById("result");
+      const description = document.getElementById("description"); // Ensure this exists
+
+      if (score >= 440) {
+        result.textContent = "Result: You are Cinderella!";
+        description.textContent =
+          "Cinderella is compassionate, positive, and forgiving. Despite the misery forced into her life by her stepmother and stepsisters, she doesn't seek revenge. She is also an animal lover.";
+      } else if (score >= 360 && score <= 430) {
+        result.textContent = "Result: You are Belle!";
+        description.textContent =
+          "Belle is not concerned about her or others' appearances and is able to look past how people appear and see into their hearts. She is confident and fearless, even though her father kept her pampered for a long time.";
+      } else if (score >= 280 && score <= 350) {
+        result.textContent = "Result: You are Princess Rapunzel!";
+        description.textContent =
+          "Rapunzel is fun, loving, daring, and spontaneous. She is so selfless that she never questioned the evil nature of the witch. Since Rapunzel spent many years hidden away in an isolated tower, she wants to explore the whole world.";
+      } else if (score >= 210 && score <= 270) {
+        result.textContent = "Result: You are Snow White!";
+        description.textContent =
+          "Snow White loves having friends, and with her friendly nature, all the seven dwarves became her best friends. Snow White's stepmother was jealous of her flawless beauty and fairness, but she has even more inner beauty.";
+      } else if (score >= 160 && score <= 200) {
+        result.textContent = "Result: You are Princess Jasmine!";
+        description.textContent =
+          "Sass is the right word for Jasmine. She is witty and hates restrictions; nothing matters more to her than freedom. Well, after Aladdin of course, with whom she fell hopelessly in love.";
+      } else if (score >= 100 && score <= 150) {
+        result.textContent = "Result: You are Princess Aurora!";
+        description.textContent =
+          "Aurora, the sleeping beauty, is enchantingly beautiful. Since she slept for a long while, she is a bit shy but still sophisticated. Upon waking up after so many years, she also became a little opinionated.";
+      } else {
+        result.textContent = "Invalid score. Please retake the quiz.";
+        description.textContent = "";
+      }
+
+      // Retake Quiz function
+      function retakeQuiz() {
+        window.location.href = "quiz5.html"; // Replace with your quiz page
+      }
+
+      // Share Results function
+      function shareResults() {
+        alert("Share functionality coming soon!");
+      }
+    </script>
+  </body>
+</html>

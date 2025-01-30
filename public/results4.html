@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Results</title>
+    <link rel="stylesheet" href="results1.css" />
+    <script defer src="results.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="https://cdn.glitch.global/b8d90080-2a2e-46ba-adea-351aa5fe7100/Screenshot%202024-12-21%20at%205.22.28%20PM.png?v=1734772968982" alt="Website Logo"/>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="account.html">Account</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Which Football Player Are You?</h1>
+      <p id="result">Result:</p>
+      <p id="description">Descripton:</p>
+
+      <button onclick="retakeQuiz()">Retake Quiz</button>
+      <button onclick="shareResults()">Share Results</button>
+    </main>
+    <hr />
+    <section>
+      <h2>Explore Similar Tests</h2>
+      <div id="similar-tests">
+        <div class="similar-tests">
+          <a href="quiz1.html">
+            <img src="https://cdn.glitch.global/b8d90080-2a2e-46ba-adea-351aa5fe7100/%5BALPHA%5D%20Animal.jpg?v=1734771443215" alt="Quiz 1 Thumbnail"/>
+            <p>What Animal Are You?</p>
+          </a>
+        </div>
+        <div class="similar-tests">
+          <a href="quiz2.html">
+            <img src="https://cdn.glitch.global/b8d90080-2a2e-46ba-adea-351aa5fe7100/%5BALPHA%5D%20Aura.jpg?v=1734771445540" alt="Quiz 2 Thumbnail"/>
+            <p>What's Your Aura Color?</p>
+          </a>
+        </div>
+        <div class="similar-tests">
+          <a href="quiz3.html">
+            <img src="https://cdn.glitch.global/b8d90080-2a2e-46ba-adea-351aa5fe7100/%5BALPHA%5D%20Death.jpg?v=1734771449967" alt="Quiz 3 Thumbnail"/>
+            <p>How Did You Die in Your Past Life?</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <p>
+          <strong>InnerSelf Explorer</strong><br />The ultimate hub for fun and
+          insightful personality tests.
+        </p>
+        <p>Copyright &copy; Aguilar, Pascual. All rights reserved.</p>
+        <div class="social-media">
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div class="citations">
+        <h3>Citations</h3>
+        <ul>
+          <li>
+            Alpha Tests. (2016a, September 3).
+            <i>How did you DIE in a past life?</i> [Video]. YouTube.
+            <a
+              href="https://www.youtube.com/watch?v=YxBAcx_raDM"
+              target="_blank"
+              >https://www.youtube.com/watch?v=YxBAcx_raDM</a
+            >
+          </li>
+          <li>
+            Alpha Tests. (2016, December 19).
+            <i>What ANIMAL are you? (Personality test with animals)</i> [Video].
+            YouTube.
+            <a
+              href="https://www.youtube.com/watch?v=EzXKa1xMVss"
+              target="_blank"
+              >https://www.youtube.com/watch?v=EzXKa1xMVss</a
+            >
+          </li>
+          <li>
+            Alpha Tests. (2017a, March 11).
+            <i>What is The Best WEAPON For You?</i> [Video]. YouTube.
+            <a
+              href="https://www.youtube.com/watch?v=aaLsMUdh1U4"
+              target="_blank"
+              >https://www.youtube.com/watch?v=aaLsMUdh1U4</a
+            >
+          </li>
+          <li>
+            Alpha Tests. (2017b, March 27).
+            <i>Which DISNEY PRINCESS are you?</i> [Video]. YouTube.
+            <a
+              href="https://www.youtube.com/watch?v=ylXS7QH40SA"
+              target="_blank"
+              >https://www.youtube.com/watch?v=ylXS7QH40SA</a
+            >
+          </li>
+          <li>
+            Alpha Tests. (2017b, May 27).
+            <i>Which FOOTBALL player are you?</i> [Video]. YouTube.
+            <a
+              href="https://www.youtube.com/watch?v=JvjiwOFD5CM"
+              target="_blank"
+              >https://www.youtube.com/watch?v=JvjiwOFD5CM</a
+            >
+          </li>
+          <li>
+            Alpha Tests. (2017b, November 15).
+            <i>What color is your aura?</i> [Video]. YouTube.
+            <a
+              href="https://www.youtube.com/watch?v=zRT0JbcoqPs"
+              target="_blank"
+              >https://www.youtube.com/watch?v=zRT0JbcoqPs</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      // Retrieve the score from the query parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const score = parseInt(urlParams.get("score"), 10); // Convert to an integer
+
+      // Display the score and result
+      const result = document.getElementById("result");
+      const description = document.getElementById("description"); // Ensure this exists
+
+      if (score >= 440) {
+        result.textContent = "Result: You are Luis Suarez!";
+        description.textContent =
+          "Like Luis, you're completely driven by two things: passion and victory. You attack without warning, and you're deadly when in a productive mood. Nothing can stop you, and you're well aware of that fact. You know what you've got inside you, and you're not afraid to let that animal out.";
+      } else if (score >= 360 && score <= 430) {
+        result.textContent = "Result: You are Lionel Messi!";
+        description.textContent =
+          "People say you are a master at what you do and you're the type of person who never really likes to hog the limelight. You're a team builder, and you never leave a team member behind. When you're in control, everyone, including your opponents and doubters, just keep silent and savour the moment.";
+      } else if (score >= 280 && score <= 350) {
+        result.textContent = "Result: You are Cristiano Ronaldo!";
+        description.textContent =
+          "Being Cristiano, you have shown an immense level of hard work and dedication. You have an unquenchable hunger to be the best, and you always seem to be chasing something. However, your goal-oriented nature can often seem to come off as being petulant or selfish.";
+      } else if (score >= 210 && score <= 270) {
+        result.textContent = "Result: You are Neymar da Silva!";
+        description.textContent =
+          "You're a go-getter for sure. However, you're not satisfied with just achieving your aim; you enjoy doing so with a little bit of flair and bravado. Although most of the time you manage to do both well, you can sometimes get carried away.";
+      } else if (score >= 160 && score <= 200) {
+        result.textContent = "Result: You are Mesut Ozil!";
+        description.textContent =
+          "You're Mesut; a completely unselfish person who put the needs of others in the team before yours. Most people might see your creative nature as a smoke screen, but you always seem to come up with a solution in the nick of time.";
+      } else if (score >= 100 && score <= 150) {
+        result.textContent = "Result: You are Gareth Bale!";
+        description.textContent =
+          "You know that your greatest assets are your fast-paced legs and every time you get the chane, you let the rest of the world know it, too. However, your penchant for sprinting and making others out of breath can also lead you to make some foolish mistakes.";
+      } else {
+        result.textContent = "Invalid score. Please retake the quiz.";
+        description.textContent = "";
+      }
+
+      // Retake Quiz function
+      function retakeQuiz() {
+        window.location.href = "quiz4.html"; // Replace with your quiz page
+      }
+
+      // Share Results function
+      function shareResults() {
+        alert("Share functionality coming soon!");
+      }
+    </script>
+  </body>
+</html>

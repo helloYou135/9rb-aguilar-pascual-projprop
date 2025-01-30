@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Results</title>
+    <link rel="stylesheet" href="results3.css" />
+    <script defer src="results3.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="https://cdn.glitch.global/b8d90080-2a2e-46ba-adea-351aa5fe7100/Screenshot%202024-12-21%20at%205.22.28%20PM.png?v=1734772968982" alt="Website Logo"/>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="account.html">Account</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>How Did You Die in a Past Life?</h1>
+      <p id="result">Result:</p>
+      <p id="description">Description:</p>
+
+      <button onclick="retakeQuiz()">Retake Quiz</button>
+      <button onclick="shareResults()">Share Results</button>
+    </main>
+    <hr />
+    <section>
+      <h2>Explore Similar Tests</h2>
+      <div id="similar-tests">
+        <div class="similar-tests">
+          <a href="quiz4.html">
+            <img src="https://cdn.glitch.global/b8d90080-2a2e-46ba-adea-351aa5fe7100/%5BALPHA%5D%20Football.jpg?v=1734771455845" alt="Quiz 4 Thumbnail"/>
+            <p>Which Football Player Are You?</p>
+          </a>
+        </div>
+        <div class="similar-tests">
+          <a href="quiz5.html">
+            <img src="https://cdn.glitch.global/b8d90080-2a2e-46ba-adea-351aa5fe7100/%5BALPHA%5D%20Princess.jpg?v=1734771473771" alt="Quiz 5 Thumbnail" />
+            <p>Which Disney Princess Are You?</p>
+          </a>
+        </div>
+        <div class="similar-tests">
+          <a href="quiz6.html">
+            <img src="https://cdn.glitch.global/b8d90080-2a2e-46ba-adea-351aa5fe7100/%5BALPHA%5D%20Weapon.jpg?v=1734771468986" alt="Quiz 6 Thumbnail"/>
+            <p>What's Your Weapon?</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <footer>
+      <div class="footer-content">
+        <p>
+          <strong>InnerSelf Explorer</strong><br />The ultimate hub for fun and
+          insightful personality tests.
+        </p>
+        <p>Copyright &copy; Aguilar, Pascual. All rights reserved.</p>
+        <div class="social-media">
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div class="citations">
+        <h3>Citations</h3>
+        <ul>
+          <li>
+            Alpha Tests. (2016a, September 3).
+            <i>How did you DIE in a past life?</i> [Video]. YouTube.
+            <a
+              href="https://www.youtube.com/watch?v=YxBAcx_raDM"
+              target="_blank"
+              >https://www.youtube.com/watch?v=YxBAcx_raDM</a
+            >
+          </li>
+          <li>
+            Alpha Tests. (2016, December 19).
+            <i>What ANIMAL are you? (Personality test with animals)</i> [Video].
+            YouTube.
+            <a
+              href="https://www.youtube.com/watch?v=EzXKa1xMVss"
+              target="_blank"
+              >https://www.youtube.com/watch?v=EzXKa1xMVss</a
+            >
+          </li>
+          <li>
+            Alpha Tests. (2017a, March 11).
+            <i>What is The Best WEAPON For You?</i> [Video]. YouTube.
+            <a
+              href="https://www.youtube.com/watch?v=aaLsMUdh1U4"
+              target="_blank"
+              >https://www.youtube.com/watch?v=aaLsMUdh1U4</a
+            >
+          </li>
+          <li>
+            Alpha Tests. (2017b, March 27).
+            <i>Which DISNEY PRINCESS are you?</i> [Video]. YouTube.
+            <a
+              href="https://www.youtube.com/watch?v=ylXS7QH40SA"
+              target="_blank"
+              >https://www.youtube.com/watch?v=ylXS7QH40SA</a
+            >
+          </li>
+          <li>
+            Alpha Tests. (2017b, May 27).
+            <i>Which FOOTBALL player are you?</i> [Video]. YouTube.
+            <a
+              href="https://www.youtube.com/watch?v=JvjiwOFD5CM"
+              target="_blank"
+              >https://www.youtube.com/watch?v=JvjiwOFD5CM</a
+            >
+          </li>
+          <li>
+            Alpha Tests. (2017b, November 15).
+            <i>What color is your aura?</i> [Video]. YouTube.
+            <a
+              href="https://www.youtube.com/watch?v=zRT0JbcoqPs"
+              target="_blank"
+              >https://www.youtube.com/watch?v=zRT0JbcoqPs</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      // Retrieve the score from the query parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const score = parseInt(urlParams.get("score"), 10); // Convert to an integer
+
+      // Display the score and result
+      const result = document.getElementById("result");
+      const description = document.getElementById("description"); // Ensure this exists
+
+      if (score >= 430) {
+        result.textContent = "Result: You Died from Natural Causes!";
+        description.textContent =
+          "You had a long and prosperous life with no regrets. You died of old age and passed away peacefully in your sleep. Long experience from your past life gave you wisdom and a realistic view of life.";
+      } else if (score >= 340 && score <= 420) {
+        result.textContent = "Result: You got Killed in Battle!";
+        description.textContent =
+          "You died heroically in a battle to save your comrade. You were a fearless warrior, who sacrificed himself so others may live free. You lived by a code and died with honor.";
+      } else if (score >= 260 && score <= 330) {
+        result.textContent = "Result: You Died from an Accident!";
+        description.textContent =
+          "Your  death was sudden and unexpected. You were killed in an accident and never got to say goodbye to your loved ones. You are expressive and socil because you know that sometimes there is no next time or second chance, it's now or never.";
+      } else if (score >= 170 && score <= 250) {
+        result.textContent = "Result: You got Murdered!";
+        description.textContent =
+          "You were stabbed in the back by someone you trusted the most. You're very reserved and don't trust easily because deep down you still believe, in the end, everyone will fail you.";
+      } else if (score >= 100 && score <= 160) {
+        result.textContent = "Result: You Caught a Sickness!";
+        description.textContent =
+          "You were a healer, risking your life to help villages infected by a deadly plague. You fought very hard to save every life you could and cure the deadly disease but in the end, you got infected and struck down by the same disease yourself.";
+      } else {
+        result.textContent = "Invalid score. Please retake the quiz.";
+        description.textContent = "";
+      }
+
+      // Retake Quiz function
+      function retakeQuiz() {
+        window.location.href = "quiz3.html"; // Replace with your quiz page
+      }
+
+      // Share Results function
+      function shareResults() {
+        alert("Share functionality coming soon!");
+      }
+    </script>
+  </body>
+</html>
